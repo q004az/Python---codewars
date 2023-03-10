@@ -1,0 +1,15 @@
+def maskify(cc):
+    return "#"*(len(cc)-4) + cc[-4:]
+    
+def maskify(cc):
+    
+    if (len(cc) <= 4):
+        return cc
+    
+    cc = list(cc)
+
+    for i in range(len(cc)-4):
+        cc[i] = '#'
+    cc = "".join(cc)
+        
+    return cc
