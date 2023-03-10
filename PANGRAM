@@ -1,0 +1,23 @@
+import string
+
+def is_pangram(s):
+    s = s.lower()
+    for char in 'abcdefghijklmnopqrstuvwxyz':
+        if char not in s:
+            return False
+    return True
+    
+    
+    def is_pangram(s):
+    cc = 'abcdefghijklmnopqrstuvwxyz'
+    s = s.lower()
+    sum = 0
+    for i in cc:
+        for j in s:
+            if j == i:
+                sum+=1
+                break
+    if (sum == 26):
+        return True
+    else:
+        return False
