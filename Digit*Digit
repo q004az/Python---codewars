@@ -1,0 +1,5 @@
+def square_digits(num):
+    l = ""
+    for x in str(num):
+        l += str(int(x)**2)
+    return int(l)
