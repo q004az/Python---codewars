@@ -1,0 +1,13 @@
+def solution(s):
+    slo = []
+    d = ''
+    for i in s:
+        d+=i
+        if (len(d) == 2):
+            slo.append(d)
+            d = ''
+
+    if (len(s)%2!=0):
+        slo.append(d)
+        slo[-1]+='_'
+    return slo
