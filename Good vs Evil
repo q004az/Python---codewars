@@ -1,0 +1,42 @@
+##Складываем сколько персов на поле с каждой стороны и умножаем количество одной боевой единицы на 1
+
+
+
+def good_vs_evil(good, evil):
+    good = (list(good))
+    good.append(' ')
+    evil = list(evil)
+    evil.append(' ')
+    dekabr = ''
+    Heroes = [1, 2, 3, 3, 4, 10]
+    Evil_Force = [1,2,2,2,3,5,10]
+    sum = 0
+    sume = 0
+    for i in range(len(Heroes)):
+        dekabr = ''
+        for j in range(len(good)):
+            if good[j] != ' ':
+                dekabr+=good[j]
+            elif good[j] == ' ':
+                sum += int(dekabr)*Heroes[i]
+                break
+        d = len(dekabr)+1
+        good = good[d:]
+    
+    dekabr = ''
+    for i in range(len(Evil_Force)):
+        dekabr = ''
+        for j in range(len(evil)):
+            if evil[j] != ' ':
+                dekabr+=evil[j]
+            elif evil[j] == ' ':
+                sume += int(dekabr)*Evil_Force[i]
+                break
+        d = len(dekabr)+1
+        evil = evil[d:]
+    if sum > sume:
+        return "Battle Result: Good triumphs over Evil"
+    if sum < sume:
+        return "Battle Result: Evil eradicates all trace of Good"
+    if sum == sume:
+        return "Battle Result: No victor on this battle field"
