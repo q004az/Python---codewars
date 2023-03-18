@@ -1,0 +1,18 @@
+def polindrom(x):
+    if x == 0:
+        return 1
+    c = ''
+    d = x
+    while x > 0:
+        c += str(x % 10)
+        x//=10
+    if int(c) == d:
+        return 1
+    else: return 0
+        
+def convert_palindromes(numbers):
+    dodo = []
+    for i in range(len(numbers)):
+        dodo.append(polindrom(numbers[i]))
+    
+    return dodo
