@@ -1,0 +1,31 @@
+def UP(mass):
+    alf = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
+           'W', 'X', 'Y', 'Z']
+    for j in range(len(alf)):
+        for i in range(len(mass)):
+            if i % 2 == 0 and mass[i].upper() == alf[j]:
+                mass[i] = alf[j]
+    return ''.join(mass)
+
+
+def spilt(mass):
+    dekabr = ''
+    c = []
+    for i in range(len(mass)):
+        if mass[i] != ' ':
+            dekabr += mass[i]
+        if mass[i] == ' ' or (i == len(mass) - 1):
+            c.append(dekabr)
+            dekabr = ''
+    return c
+
+def to_weird_case(words):
+    mass = words
+    mass = mass.lower()
+    mass = spilt(mass)
+    new_word = ''
+    for i in range(len(mass)):
+        new_word += UP(list(mass[i]))+ ' '
+    print(new_word[:-1])
+    
+    return new_word[:-1]
