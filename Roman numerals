@@ -1,0 +1,26 @@
+class RomanNumerals:
+    @staticmethod
+    def to_roman(val):
+        numers=[1000,900,500,400,100,90,50,40,10,9,5,4,1]
+        Roman=["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"]
+        result=[]
+        schet=0
+        for i in numers:
+            while val>=i:
+                result.append(Roman[schet])
+                val-=i
+            else:
+                schet+=1
+        return "".join(result)
+
+    @staticmethod
+    def from_roman(roman_num):
+        all_roman = [(1000, 'M'), (900, 'CM'), (500, 'D'), (400, 'CD'),
+                 (100, 'C'), (90, 'XC'), (50, 'L'), (40, 'XL'),
+                 (10, 'X'), (9, 'IX'), (5, 'V'), (4, 'IV'), (1, 'I')]
+        dec = 0
+        for i, r in all_roman:
+            while roman_num.startswith(r):
+                dec += i
+                roman_num = roman_num[len(r):]
+        return dec
