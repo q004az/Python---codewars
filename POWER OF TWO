@@ -1,0 +1,9 @@
+def power_of_two(x):
+    l = 2
+    i = 0
+    while i > -1:
+        if l**i == x:
+            return True
+        if l**i > x:
+            return False
+        i+=1
